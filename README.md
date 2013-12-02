@@ -2,6 +2,7 @@ resume
 ======
 
 Pythonic resume viewer
+----------------------
 
 Just a simple viewer of a resume.
 
@@ -11,12 +12,11 @@ You can clone it, and use it.
 
 Contains two (for now) files:
 
-resume.py - where your experience and skills are described,
-
-view_resume.py - functions for better reading of that resume.
+* resume.py - where your experience and skills are described,
+* view_resume.py - functions for better reading of that resume.
 
 TODO:
+-----
 
-Usage instruction,
-
-Export to HTML
+* Usage instruction,
+* Export to HTML
