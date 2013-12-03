@@ -15,6 +15,13 @@ Contains two (for now) files:
 * resume.py - where your experience and skills are described,
 * view_resume.py - functions for better reading of that resume.
 
+Requirements:
+-----
+
+* Python
+* Jinja2
+
+
 TODO:
 -----
 
