@@ -9,6 +9,7 @@ class Person:
     BirthDate = date(1982,7,7)
     BirthPlace = 'Rokiškis, Lithuania'
     Sex = 'Male'
+    Occupation = 'Python developer'
 
     Education = [
         {
@@ -16,12 +17,14 @@ class Person:
             'end_year':2001,
             'type':'School',
             'institution':'Obeliai High School',
+            'degree':'High School diploma',
         },
         {
             'begin_year':2002,
             'end_year':2005,
             'type':'College',
             'institution':'Vilnius College in Higher Education',
+            'degree':'Computer programming',
         }
     ]
 
@@ -127,6 +130,12 @@ class Person:
         'Sense of humor':'Sarcastic',
         'Communication':'Sociable',
         'Team':'Likes to be with people',
+    }
+
+    Contacts = {
+        'Email':'kroitus@gmailcom',
+        'Phone':'+37065811744',
+        'Address':'',
     }
 
     Languages = {

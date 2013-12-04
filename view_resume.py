@@ -103,8 +103,8 @@ def to_html(template='boring.html'):
     person = Person()
     parsed_person = {}
 
-    parsed_person['firstname'] = person.FirstName
-    parsed_person['lastname'] = person.LastName
+    parsed_person['firstname'] = unicode(person.FirstName, "utf8")
+    parsed_person['lastname'] = unicode(person.LastName, "utf8")
     parsed_person['birthdate'] = person.BirthDate.strftime('%Y-%m-%d')
     parsed_person['birthplace'] = person.BirthPlace
     parsed_person['education'] = []
@@ -114,6 +114,7 @@ def to_html(template='boring.html'):
         institution['begin'] = school['begin_year']
         institution['end'] = school['end_year']
         institution['institution'] = school['institution']
+        institution['degree'] = school['degree']
         parsed_person['education'].append(institution)
 
     parsed_person['work_experience'] = []
@@ -162,11 +163,11 @@ def to_html(template='boring.html'):
             lang['levels'].append({'skill':skill,'rate':rate})
         parsed_person['languages'].append(lang)
 
-    parsed_person['languages'] = []
+    parsed_person['hobbies'] = []
     interests = person.Interests.items()
     interests.sort()
     for area, interests in interests:
-        parsed_person['languages'].append({
+        parsed_person['hobbies'].append({
             'area':area,
             'interests':interests
         })
@@ -174,26 +175,37 @@ def to_html(template='boring.html'):
     parsed_person['projects'] = []
     projects = person.Projects.items()
     projects.sort()
-    for project, description in skills:
+    for project, description in projects:
         parsed_person['projects'].append({
             'project':project,
             'description':description
         })
 
     parsed_person['links'] = []
-    link = person.Links.items()
-    link.sort()
-    for resource, url in skills:
+    links = person.Links.items()
+    links.sort()
+    for resource, url in links:
         parsed_person['links'].append({
             'resource':resource,
             'url':url
         })
 
+    parsed_person['contacts'] = []
+    contacts = person.Contacts.items()
+    contacts.sort()
+    for ctype, content in contacts:
+        parsed_person['contacts'].append({
+            'type':ctype.lower(),
+            'content':content
+        })
+
     parsed_person['about'] = person.About
+    parsed_person['occupation'] = person.Occupation
 
     env = Environment(loader=PackageLoader('resume', 'templates'))
     template = env.get_template(template)
     rendered = template.render(data=parsed_person)
+
     output_file = open('resume.html', 'w')
-    output_file.write(rendered)
+    output_file.write(rendered.encode('utf-8'))
     output_file.close()
