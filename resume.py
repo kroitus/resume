@@ -52,7 +52,7 @@ class Person:
             'begin': date(2007, 7, 16),
             'end': date(2010, 2, 19),
             'company': 'Vikarinos Technologijos',
-            'occupation': 'Sofware developer',
+            'occupation': 'Software developer',
             'activities': [
                 'Development of HR systems',
                 'Integration with external systems',
