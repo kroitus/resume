@@ -14,7 +14,7 @@ class Person:
 
     Education = [
         {
-            'begin_year': 1982,
+            'begin_year': 1989,
             'end_year': 2001,
             'type': 'School',
             'institution': 'Obeliai High School',
@@ -103,7 +103,7 @@ class Person:
         },
         {
             'begin': date(2011, 7, 26),
-            'end': None,
+            'end': date(2012, 5, 1),
             'company': 'Idiles systems',
             'occupation': 'Web developer',
             'activities': [
@@ -117,6 +117,24 @@ class Person:
                 'HTML',
                 'CSS',
                 'JQuery'
+            ]
+        },
+        {
+            'begin': date(2012, 5, 2),
+            'end': None,
+            'company': 'OX Energy',
+            'occupation': 'Web developer',
+            'activities': [
+                'Web systems development',
+                'Web systems support',
+            ],
+            'technologies': [
+                'Python',
+                'Django',
+                'HTML',
+                'CSS',
+                'JQuery',
+                'MySQL'
             ]
         },
     ]
