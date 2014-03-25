@@ -31,7 +31,7 @@ class Person:
 
     Work_Experience = [
         {
-            'begin': date(2005, 7, 7),
+            'begin': date(2005, 10, 2),
             'end': date(2007, 7, 15),
             'company': 'ASPA',
             'occupation': 'Engineer',
